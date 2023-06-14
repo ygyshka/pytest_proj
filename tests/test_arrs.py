@@ -16,3 +16,9 @@ def test_normalized_start():
     assert arrs.my_slice([1, 2, 3, 4, 5], -2, 3) == []
     assert arrs.my_slice([], 0, 3) == []
     assert arrs.my_slice([1, 2, 3, 4], -5, 3) == [1, 2, 3]
+
+
+def test_get_val():
+    assert arrs.get_val({"tig": "covers"}, "tig") == "covers"
+    assert arrs.get_val({"tig": "covers", "log": "merge"}, "log", "branch") == "merge"
+    assert arrs.get_val({}, "tig", "covers") == "covers"
